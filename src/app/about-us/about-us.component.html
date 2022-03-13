@@ -5,10 +5,10 @@
 
     <h3>Team</h3>
     <ul class="list-group">
-        <li class="list-group-item" *ngFor="let member of team">
+        <li class="list-group-item" *ngFor="let member of team, index as i">
             <h6>Name: {{member.name}}</h6>
             <h6>Specialty: {{member.specialty}}</h6>
-            <a href="#">Read more ...</a>
+            <a [routerLink]="['/team',i+1]">Read more ...</a>
             <!-- <h6>Description: {{member.description}}</h6> -->
             
            

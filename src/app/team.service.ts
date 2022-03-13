@@ -24,7 +24,7 @@ export class TeamService {
       description:'Est exercitationem nesciunt recusandae vel nostrum doloribus tempore, corporis in obcaecati ea'
 
     }
-
+  
 
   ]
 
@@ -33,5 +33,8 @@ export class TeamService {
   }
   gettingTeam(){
     return this.team;
+  }
+  gettingMember(i:any){
+    return this.team[i];
   }
 }

@@ -14,11 +14,13 @@ import { ContactComponent } from './contact/contact.component';
 import { from } from 'rxjs';
 import { HomeComponent } from './home/home.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { TeamComponent } from './team/team.component';
 
 const appRoutes: Routes = [
   {path:'about', component: AboutUsComponent },
   {path:'contact', component: ContactComponent },
-  {path:'main', component: MainComponent },
+  {path:'team/:id', component: TeamComponent },
+  {path:'info', component: MainComponent },
   {path:'', component: HomeComponent, pathMatch: 'full'},
   {path:'**', redirectTo:'/', pathMatch: 'full'},
 
@@ -35,7 +37,8 @@ const appRoutes: Routes = [
     MainComponent,
     ContactComponent,
     HomeComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    TeamComponent
   ],
   imports: [
     BrowserModule,
