@@ -1,0 +1,65 @@
+<h1 class="text-center">Angular-Intro </h1>
+<h2 class="container bg-dark text-white text-center my-4 py-4">ngIf show={{show}}</h2>
+<div class="container ">
+
+     
+     
+      <ng-template #showTwo>
+        <p class="text-info">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, nesciunt? Ea inventore dicta incidunt laudantium quia maiores consequuntur ut distinctio earum saepe perferendis, rem placeat alias repudiandae vitae? Voluptatum, rem?
+        </p>
+      </ng-template>
+
+    <p class="text-danger" *ngIf="show; else showTwo"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptatibus culpa, quibusdam architecto recusandae voluptatem magni rem quis blanditiis, similique, dicta vitae ducimus ipsum doloribus sed voluptates facere corrupti praesentium.</p>
+
+    <button class="btn btn-primary d-flex m-auto" (click)="show=!show" >Action</button>
+</div>
+
+
+<h2 class="container bg-dark text-white text-center my-4 py-4">[ngClass]</h2>
+<div class="container ">
+
+     
+     
+     
+        <p class="text-info" [ngClass]="active=='firstP' ? 'd-block': 'd-none'">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, nesciunt? Ea inventore dicta incidunt laudantium quia maiores consequuntur ut distinctio earum saepe perferendis, rem placeat alias repudiandae vitae? Voluptatum, rem?
+        </p>
+   
+
+       <p class="text-danger" [ngClass]="active=='secondP' ? 'd-block': 'd-none'" > Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptatibus culpa, quibusdam architecto recusandae voluptatem magni rem quis blanditiis, similique, dicta vitae ducimus ipsum doloribus sed voluptates facere corrupti praesentium.</p>
+        <div class="buttons d-inline">
+
+          <button class="btn btn-info d-flex m-auto" (click)="active='firstP'" >first P</button>
+          <button class="btn btn-danger  d-flex m-auto my-2" (click)="active='secondP'" >second P</button>
+        </div>
+  
+</div>
+
+<h2 class="container bg-dark text-white text-center my-4 py-4">[ngFor]</h2>
+<div class="container">
+
+  <ul>
+    <li *ngFor="let course of courses">{{course}}</li>
+  </ul>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Type</th>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pet of pets; index as i">
+        <th scope="row">{{i+1}}</th>
+        <td>{{pet.type}}</td>
+        <td>{{pet.name}}</td>
+        <td>{{pet.age}}</td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+
+</div>
